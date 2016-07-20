@@ -1,4 +1,5 @@
-#!/bin/bash
+#   Set -e to abort on error, just like Jenkins.
+set -e
 
 ACScheme="MyScheme"
 ACExportPlistPath="acbuild-release.plist"
