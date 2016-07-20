@@ -3,7 +3,11 @@
 ACScheme="MyScheme"
 ACExportPlistPath="acbuild-release.plist"
 
-echo "### ACBuild: Starting Build..."
+echo "### ACBuild: Starting Build ..."
+echo
+
+echo "### ACBuild: Cleaning targets ..."
+xcodebuild clean -alltargets
 echo
 
 echo "### ACBuild: Running archive build ..."
