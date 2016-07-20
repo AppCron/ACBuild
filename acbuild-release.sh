@@ -6,6 +6,10 @@ ACExportPlistPath="acbuild-release.plist"
 echo "### ACBuild: Starting Build ..."
 echo
 
+echo "### ACBuild: Listing Xcode project ..."
+xcodebuild -list
+echo
+
 echo "### ACBuild: Checking build folder ..."
 if [ -d build ]; then
 echo "### ACBuild: Removing build folder ..."
