@@ -1,8 +1,9 @@
 #   Set -e to abort on error, just like Jenkins.
 set -e
 
-ACScheme="MyScheme"
-ACExportPlistPath="acbuild-release.plist"
+ACScheme="SDSApp"
+ACBundleIdentifier=""
+ACExportPlistPath="build-release.plist"
 
 echo "### ACBuild: Starting Build ..."
 echo
@@ -24,7 +25,11 @@ echo
 
 echo "### ACBuild: Running archive build ..."
 echo
+if [ -n "$ACBundleIdentifier" ]; then
+xcodebuild PRODUCT_BUNDLE_IDENTIFIER="$ACBundleIdentifier" -scheme "$ACScheme" archive -archivePath "build/ACBuild/$ACScheme.xcarchive"
+else
 xcodebuild -scheme "$ACScheme" archive -archivePath "build/ACBuild/$ACScheme.xcarchive"
+fi
 echo
 
 echo "### ACBuild: Exporting archive to IPA ..."
