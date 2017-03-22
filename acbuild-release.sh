@@ -63,13 +63,13 @@ echo
 
 # Team + x
 if [ -n "$ACTeam" ]; then
-  if [ - n "$ACBundleIdentifier"]; then
+  if [ -n "$ACBundleIdentifier" ]; then
     xcodebuild -scheme "$ACScheme" archive -archivePath "build/ACBuild/$ACScheme.xcarchive" DEVELOPMENT_TEAM="$ACTeam" PRODUCT_BUNDLE_IDENTIFIER="$ACBundleIdentifier"
   else
     xcodebuild -scheme "$ACScheme" archive -archivePath "build/ACBuild/$ACScheme.xcarchive" DEVELOPMENT_TEAM="$ACTeam" 
   fi
 # Bundle Identifier only
-elif [- n "$ACBundleIdentifier"]; then
+elif [ -n "$ACBundleIdentifier" ]; then
   echo "GOOD"
   xcodebuild -scheme "$ACScheme" archive -archivePath "build/ACBuild/$ACScheme.xcarchive" PRODUCT_BUNDLE_IDENTIFIER="$ACBundleIdentifier"
 # Default
